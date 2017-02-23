@@ -148,6 +148,12 @@ function initializeMap() {
     return locations;
   }
 
+function createMapMarker() {
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map, marker);
+  });
+}
+
   /*
   createMapMarker(placeData) reads Google Places search results to create map pins.
   placeData is the object returned from search results containing information
